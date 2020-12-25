@@ -1,0 +1,90 @@
+<!-- This is GUI for Breast Cancer Detection Application Using Machine Learning Classifer -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+
+  <style>
+    /* CSS code for button */
+    body {
+      background-image: url('static/images/world.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Show Indian AI Hospital banner-->
+  </div>
+ 
+ 
+ <div class="login">
+	
+    <!-- Get input for predict the cancer -->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter the value of applicant features >>></h1>
+        
+    	<input type="text" name="ApplicantIncome" placeholder="ApplicantIncome" required="required" />
+        <input type="text" name="CoapplicantIncome" placeholder="CoapplicantIncome" required="required" />
+		<input type="text" name="LoanAmount" placeholder="LoanAmount" required="required" />
+		<input type="text" name="Loan_Amount_Term" placeholder="Loan_Amount_Term" required="required" />
+        <input type="text" name="Credit_History" placeholder="Credit_History" required="required" />
+    
+		
+    	<input type="text" name="Dependents_0" placeholder="Dependents_0" required="required" />
+    	<input type="text" name="'Education_Not Graduate'" placeholder="'Education_Not Graduate'" required="required" />
+    	
+    	<input type="text" name="Property_Area_Rural" placeholder="Property_Area_Rural" required="required" />
+    	
+        <input type="text" name="Property_Area_Semiurban" placeholder="Property_Area_Semiurban" required="required" />
+		<input type="text" name="Property_Area_Urban" placeholder="Property_Area_Urban" required="required" />
+    	
+		
+        <br>
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Loan</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h1>{{ prediction_text }}</h1>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
